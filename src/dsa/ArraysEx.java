@@ -3,27 +3,17 @@ package dsa;
 import java.util.Arrays;
 
 public class ArraysEx {
-	
-	public static int[] newArr = {0, 10, 20, 30, 40 ,40, 50 ,60, 70, 80, 90};
-
-	public static int[] getNewArr() {
-		return newArr;
-	}
-
-	public static void setNewArr(int[] newArr) {
-		ArraysEx.newArr = newArr;
-	}
 
 	// Is array empty
 
-	public static boolean isEmptyArr(int[] arr) {
+	public boolean isEmptyArr(int[] arr) {
 		boolean isEmpty = arr.length == 0;
 		return isEmpty;
 	}
 
 	// Size of array (count number of elements)
 
-	public static int sizeArr(int[] arr) {
+	public int sizeArr(int[] arr) {
 		int counter = 0;
 		if (isEmptyArr(arr)) {
 			return 0;
@@ -37,7 +27,7 @@ public class ArraysEx {
 
 	// Reverse an array
 
-	public static int[] reverseArray(int[] arr) {
+	public int[] reverseArray(int[] arr) {
 		int[] invertedArr = new int[arr.length];
 		int index = 0;
 		for (int i = arr.length - 1; i >= 0; i--) {
@@ -49,7 +39,7 @@ public class ArraysEx {
 
 	// Push element on top of array
 
-	public static int[] pushTopOfArray(int[] arr, int number) {
+	public int[] pushTopOfArray(int[] arr, int number) {
 		int[] pushedArr = new int[arr.length + 1];
 		pushedArr[0] = number;
 		for (int i = 0; i < arr.length; i++) {
@@ -60,7 +50,7 @@ public class ArraysEx {
 
 	// Pop element from bottom of array
 
-	public static int[] popBottomArray(int[] arr) {
+	public int[] popBottomArray(int[] arr) {
 		int[] poppedArr = new int[arr.length - 1];
 		for (int i = 0; i < arr.length - 1; i++) {
 			poppedArr[i] = arr[i];
@@ -70,7 +60,7 @@ public class ArraysEx {
 
 	// Push element on index n of an array
 
-	public static int[] pushIndexArray(int[] arr, int index, int number) {
+	public int[] pushIndexArray(int[] arr, int index, int number) {
 		int[] pushedArr = new int[arr.length + 1];
 		int j = 0;
 		for (int i = 0; i < arr.length + 1; i++) {
@@ -90,7 +80,7 @@ public class ArraysEx {
 	// Binary search: search element in array, return position index or -1 if not
 	// found. The array *must* be ordered.
 
-	public static int searchElement(int[] arr, int number) {
+	public int searchElement(int[] arr, int number) {
 		
 		if (number > arr[arr.length - 1] || number < arr[0]) {
 			return -1;
@@ -114,7 +104,7 @@ public class ArraysEx {
 
 	// Rotate one element in array, clockwise
 
-	public static int[] rotateClockwise(int[] arr) {
+	public int[] rotateClockwise(int[] arr) {
 		int[] rotatedArr = new int[arr.length];
 		rotatedArr[0] = arr[arr.length - 1];
 		for (int i = 1; i < arr.length; i++) {
@@ -122,24 +112,4 @@ public class ArraysEx {
 		}
 		return rotatedArr;
 	}
-
-	public static void main(String[] args) {
-		ArraysEx newArr = new ArraysEx();
-		int[] testArr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int[] test2 = {};
-		int[] test3 = { 112, 134, 1000, 1001, 2002, 2500, 2600, 3000, 40000, 41000, 100000 };
-		System.out.println("Is array empty? " + isEmptyArr(testArr));
-		System.out.println("Is array empty? " + isEmptyArr(test2));
-		System.out.println("Size of array: " + sizeArr(testArr));
-		System.out.println("Size of array: " + sizeArr(test2));
-		System.out.println("Reversed array: " + Arrays.toString(reverseArray(testArr)));
-		System.out.println("ArraysEx push element on top: " + Arrays.toString(pushTopOfArray(testArr, 100)));
-		System.out.println("ArraysEx pop element: " + Arrays.toString(popBottomArray(testArr)));
-		System.out.println("ArraysEx push element on position 2: " + Arrays.toString(pushIndexArray(testArr, 2, 100)));
-		System.out.println("Search  if integer 9 is on array, return position: " + searchElement(testArr, 9));
-		System.out.println("Search if integer 2600 is on array, return position: " + searchElement(test3, 2600));
-		System.out.println("Rotate one element clockwise: " + Arrays.toString( rotateClockwise(newArr.getNewArr())));
-
-	}
-
 }
