@@ -2,7 +2,7 @@ package dsa;
 
 import java.util.Arrays;
 
-public class Array {
+public class ArraysEx {
 	
 	public static int[] newArr = {0, 10, 20, 30, 40 ,40, 50 ,60, 70, 80, 90};
 
@@ -11,7 +11,7 @@ public class Array {
 	}
 
 	public static void setNewArr(int[] newArr) {
-		Array.newArr = newArr;
+		ArraysEx.newArr = newArr;
 	}
 
 	// Is array empty
@@ -124,7 +124,7 @@ public class Array {
 	}
 
 	public static void main(String[] args) {
-		Array newArr = new Array();
+		ArraysEx newArr = new ArraysEx();
 		int[] testArr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int[] test2 = {};
 		int[] test3 = { 112, 134, 1000, 1001, 2002, 2500, 2600, 3000, 40000, 41000, 100000 };
@@ -133,9 +133,9 @@ public class Array {
 		System.out.println("Size of array: " + sizeArr(testArr));
 		System.out.println("Size of array: " + sizeArr(test2));
 		System.out.println("Reversed array: " + Arrays.toString(reverseArray(testArr)));
-		System.out.println("Array push element on top: " + Arrays.toString(pushTopOfArray(testArr, 100)));
-		System.out.println("Array pop element: " + Arrays.toString(popBottomArray(testArr)));
-		System.out.println("Array push element on position 2: " + Arrays.toString(pushIndexArray(testArr, 2, 100)));
+		System.out.println("ArraysEx push element on top: " + Arrays.toString(pushTopOfArray(testArr, 100)));
+		System.out.println("ArraysEx pop element: " + Arrays.toString(popBottomArray(testArr)));
+		System.out.println("ArraysEx push element on position 2: " + Arrays.toString(pushIndexArray(testArr, 2, 100)));
 		System.out.println("Search  if integer 9 is on array, return position: " + searchElement(testArr, 9));
 		System.out.println("Search if integer 2600 is on array, return position: " + searchElement(test3, 2600));
 		System.out.println("Rotate one element clockwise: " + Arrays.toString( rotateClockwise(newArr.getNewArr())));
